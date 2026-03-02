@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>सेमेटिक धर्म (Semitic Religions)</title>
+  <style>
+    :root {
+      --primary: #1a3c5e;
+      --secondary: #c0882a;
+      --accent: #2d6a9f;
+      --light: #f5f0e8;
+      --white: #ffffff;
+      --text: #1e1e1e;
+      --muted: #555;
+      --border: #d4c9b0;
+      --islam: #1a7a4a;
+      --christian: #7a1a1a;
+      --judaism: #1a3a7a;
+      --shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Sans Devanagari', 'Noto Serif', Georgia, serif;
+      background: var(--light);
+      color: var(--text);
+      line-height: 1.9;
+      font-size: 16px;
+    }
+
+    /* ─── NAV ─────────────────────────────────── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--primary);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.35);
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      height: 56px;
+    }
+
+    .nav-brand {
+      color: var(--secondary);
+      font-size: 1.2rem;
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 4px;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: #cdd8e8;
+      text-decoration: none;
+      font-size: 0.78rem;
+      padding: 6px 10px;
+      border-radius: 4px;
+      transition: background 0.2s, color 0.2s;
+      white-space: nowrap;
+    }
+
+    .nav-links a:hover { background: var(--accent); color: #fff; }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+      background: none;
+      border: none;
+      padding: 6px;
+    }
+
+    .hamburger span {
+      width: 24px; height: 3px;
+      background: #cdd8e8;
+      border-radius: 3px;
+      transition: transform 0.3s;
+    }
+
+    /* ─── HERO ────────────────────────────────── */
+    .hero {
+      background: linear-gradient(135deg, var(--primary) 0%, #0d2340 50%, #1a4a2e 100%);
+      color: var(--white);
+      text-align: center;
+      padding: 80px 20px 60px;
+    }
+
+    .hero-subtitle {
+      font-size: 0.9rem;
+      letter-spacing: 3px;
+      color: var(--secondary);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 800;
+      margin-bottom: 12px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    }
+
+    .hero-en { font-size: 1.2rem; color: #a0bcd8; margin-bottom: 30px; }
+
+    .hero-badges {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      padding: 8px 22px;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .badge-islam  { background: var(--islam); color: #fff; }
+    .badge-christ { background: var(--christian); color: #fff; }
+    .badge-juda   { background: var(--judaism); color: #fff; }
+
+    /* ─── TOC ─────────────────────────────────── */
+    .toc-section {
+      background: var(--white);
+      border-top: 4px solid var(--secondary);
+      padding: 40px 20px;
+    }
+
+    .toc-inner {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .toc-inner h2 {
+      text-align: center;
+      color: var(--primary);
+      font-size: 1.5rem;
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--border);
+    }
+
+    .toc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+    }
+
+    .toc-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      text-decoration: none;
+      color: var(--primary);
+      transition: all 0.2s;
+      background: var(--light);
+    }
+
+    .toc-item:hover {
+      background: var(--primary);
+      color: var(--white);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .toc-num {
+      background: var(--secondary);
+      color: #fff;
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* ─── MAIN LAYOUT ────────────────────────── */
+    main { max-width: 1000px; margin: 0 auto; padding: 40px 20px 60px; }
+
+    /* ─── SECTIONS ───────────────────────────── */
+    .section {
+      background: var(--white);
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      margin-bottom: 40px;
+      overflow: hidden;
+    }
+
+    .section-header {
+      padding: 20px 30px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .section-header.primary-header { background: var(--primary); color: #fff; }
+    .section-header.islam-header   { background: var(--islam);   color: #fff; }
+    .section-header.christ-header  { background: var(--christian); color: #fff; }
+    .section-header.judaism-header { background: var(--judaism);  color: #fff; }
+    .section-header.neutral-header { background: #3d3d3d; color: #fff; }
+    .section-header.gold-header    { background: #7a5c1a; color: #fff; }
+
+    .section-icon { font-size: 1.8rem; }
+
+    .section-header h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+
+    .section-body { padding: 28px 32px; }
+
+    p { margin-bottom: 16px; color: var(--text); }
+    p:last-child { margin-bottom: 0; }
+
+    /* ─── SUBSECTIONS ────────────────────────── */
+    .subsection {
+      margin-bottom: 32px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--border);
+    }
+    .subsection:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+    .subsection h3 {
+      color: var(--primary);
+      font-size: 1.15rem;
+      margin-bottom: 14px;
+      padding-left: 12px;
+      border-left: 4px solid var(--secondary);
+    }
+
+    .subsection.islam-sub  h3 { border-color: var(--islam); color: var(--islam); }
+    .subsection.christ-sub h3 { border-color: var(--christian); color: var(--christian); }
+    .subsection.juda-sub   h3 { border-color: var(--judaism); color: var(--judaism); }
+
+    /* ─── CALLOUT BOXES ──────────────────────── */
+    .callout {
+      padding: 16px 20px;
+      border-radius: 8px;
+      margin: 16px 0;
+      border-left: 5px solid;
+    }
+
+    .callout-islam   { background: #e8f5ee; border-color: var(--islam);   }
+    .callout-christ  { background: #fdf0f0; border-color: var(--christian); }
+    .callout-judaism { background: #eef2fd; border-color: var(--judaism);  }
+    .callout-neutral { background: #f0f0f0; border-color: #888; }
+
+    .callout strong { display: block; margin-bottom: 6px; }
+
+    /* ─── TABLES ─────────────────────────────── */
+    .table-wrap { overflow-x: auto; margin: 20px 0; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.93rem;
+    }
+
+    thead th {
+      background: var(--primary);
+      color: #fff;
+      padding: 12px 16px;
+      text-align: left;
+      font-weight: 600;
+    }
+
+    tbody tr { border-bottom: 1px solid var(--border); }
+    tbody tr:hover { background: #f7f2ea; }
+
+    tbody td {
+      padding: 11px 16px;
+      vertical-align: top;
+    }
+
+    tbody tr:nth-child(even) { background: #faf7f2; }
+    tbody tr:nth-child(even):hover { background: #f4ede0; }
+
+    /* ─── LISTS ──────────────────────────────── */
+    ul, ol {
+      padding-left: 24px;
+      margin-bottom: 14px;
+    }
+
+    li { margin-bottom: 8px; }
+
+    /* ─── PROPHET GRID ───────────────────────── */
+    .prophet-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 10px;
+      margin: 16px 0;
+    }
+
+    .prophet-card {
+      background: linear-gradient(135deg, var(--light), #ede8dc);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 12px;
+      text-align: center;
+      font-size: 0.9rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .prophet-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+    }
+
+    .prophet-num {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--secondary);
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    .prophet-hi { font-weight: 700; color: var(--primary); display: block; }
+    .prophet-en { font-size: 0.75rem; color: var(--muted); display: block; }
+
+    /* ─── JUDAISM PROPHET TABLE ──────────────── */
+    .juda-prophet-table {
+      columns: 3;
+      column-gap: 20px;
+      margin: 16px 0;
+    }
+
+    .juda-prophet-table ul {
+      break-inside: avoid;
+      padding-left: 18px;
+    }
+
+    /* ─── COMPARISON TABLE ───────────────────── */
+    .compare-table thead th:first-child { background: #3d3d3d; }
+    .compare-table thead th:nth-child(2) { background: var(--judaism); }
+    .compare-table thead th:nth-child(3) { background: var(--christian); }
+    .compare-table thead th:nth-child(4) { background: var(--islam); }
+    .compare-table thead th:nth-child(5) { background: #5a3e28; }
+
+    /* ─── CASTE / COMMUNITY CARDS ────────────── */
+    .community-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 16px;
+      margin: 16px 0;
+    }
+
+    .community-card {
+      border-radius: 10px;
+      padding: 16px 18px;
+      border: 1px solid var(--border);
+      background: var(--white);
+    }
+
+    .community-card h4 {
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+    }
+
+    .community-card p { font-size: 0.88rem; color: var(--muted); margin-bottom: 0; }
+
+    .cc-islam    h4 { color: var(--islam);    border-left: 3px solid var(--islam);    padding-left: 8px; }
+    .cc-christ   h4 { color: var(--christian); border-left: 3px solid var(--christian); padding-left: 8px; }
+    .cc-judaism  h4 { color: var(--judaism);  border-left: 3px solid var(--judaism);  padding-left: 8px; }
+
+    /* ─── HIGHLIGHT BOX ──────────────────────── */
+    .highlight-box {
+      background: linear-gradient(135deg, #fef9ec, #fdf3d6);
+      border: 2px solid var(--secondary);
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin: 20px 0;
+      font-weight: 600;
+      color: #4a3000;
+    }
+
+    /* ─── KEY-VALUE ──────────────────────────── */
+    .kv { margin-bottom: 10px; }
+    .kv .kv-label { font-weight: 700; color: var(--primary); margin-right: 6px; }
+
+    /* ─── POPULATION IMAGE ───────────────────── */
+    .img-placeholder {
+      background: linear-gradient(135deg, #e8eef8, #dce6f0);
+      border: 2px dashed var(--accent);
+      border-radius: 10px;
+      padding: 40px 20px;
+      text-align: center;
+      color: var(--accent);
+      margin: 20px 0;
+      font-size: 0.95rem;
+    }
+
+    .img-placeholder .icon { font-size: 3rem; display: block; margin-bottom: 10px; }
+
+    /* ─── FOOTER ─────────────────────────────── */
+    footer {
+      background: var(--primary);
+      color: #a0bcd8;
+      text-align: center;
+      padding: 28px 20px;
+      font-size: 0.88rem;
+    }
+
+    footer strong { color: var(--secondary); }
+
+    /* ─── SCROLL TOP ─────────────────────────── */
+    #scrollTop {
+      position: fixed;
+      bottom: 30px; right: 30px;
+      background: var(--secondary);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 46px; height: 46px;
+      font-size: 1.3rem;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.2s;
+    }
+
+    #scrollTop:hover { background: var(--primary); }
+
+    /* ─── RESPONSIVE ─────────────────────────── */
+    @media (max-width: 768px) {
+      .hamburger { display: flex; }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 56px; left: 0; right: 0;
+        background: var(--primary);
+        flex-direction: column;
+        padding: 12px 20px 20px;
+        gap: 4px;
+      }
+
+      .nav-links.open { display: flex; }
+      .nav-links a { font-size: 0.85rem; }
+
+      .nav-inner { position: relative; }
+
+      .hero { padding: 50px 16px 40px; }
+
+      .section-body { padding: 18px 18px; }
+
+      .juda-prophet-table { columns: 2; }
+
+      .prophet-grid { grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); }
+    }
+
+    @media (max-width: 480px) {
+      .juda-prophet-table { columns: 1; }
+    }
+
+    /* ─── PRINT ──────────────────────────────── */
+    @media print {
+      nav, #scrollTop { display: none; }
+      .section { box-shadow: none; border: 1px solid #ccc; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── NAVBAR ─────────────────────────── -->
+<nav>
+  <div class="nav-inner">
+    <a class="nav-brand" href="#top">✦ सेमेटिक धर्म</a>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#parichay">परिचय</a></li>
+      <li><a href="#itihas">इतिहास</a></li>
+      <li><a href="#ishwar">ईश्वर</a></li>
+      <li><a href="#paigambar">पैगम्बर</a></li>
+      <li><a href="#upasana">उपासना</a></li>
+      <li><a href="#naitikta">नैतिकता</a></li>
+      <li><a href="#jansankhya">जनसंख्या</a></li>
+      <li><a href="#antar">हिन्दू v/s अब्राहमिक</a></li>
+      <li><a href="#jativad">जातिवाद</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ─── HERO ───────────────────────────── -->
+<header class="hero" id="top">
+  <p class="hero-subtitle">Academic Research Paper</p>
+  <h1>सेमेटिक धर्म</h1>
+  <p class="hero-en">Semitic Religions — Judaism, Christianity & Islam</p>
+  <!-- <div class="hero-badges">
+    <span class="badge badge-juda">✡ यहूदी धर्म</span>
+    <span class="badge badge-christ">✝ ईसाई धर्म</span>
+    <span class="badge badge-islam">☪ इस्लाम</span>
+  </div> -->
+</header>
+
+<!-- ─── TABLE OF CONTENTS ──────────────── -->
+<section class="toc-section">
+  <div class="toc-inner">
+    <h2>📑 अनुक्रमाणिका (Table of Contents)</h2>
+    <div class="toc-grid">
+      <a href="#parichay"  class="toc-item"><span class="toc-num">1</span> परिचय</a>
+      <a href="#itihas"    class="toc-item"><span class="toc-num">2</span> इतिहास</a>
+      <a href="#ishwar"    class="toc-item"><span class="toc-num">3</span> ईश्वर का सिद्धांत</a>
+      <a href="#paigambar" class="toc-item"><span class="toc-num">4</span> पैगम्बर की परम्पराय</a>
+      <a href="#upasana"   class="toc-item"><span class="toc-num">5</span> उपासना और पारलोकिक जीवन</a>
+      <a href="#naitikta"  class="toc-item"><span class="toc-num">6</span> नैतिकता और आचार विचार</a>
+      <a href="#jansankhya" class="toc-item"><span class="toc-num">7</span> भारत में जनसंख्या अनुपात</a>
+      <a href="#antar"     class="toc-item"><span class="toc-num">8</span> हिन्दू v/s अब्राहमिक धर्म</a>
+      <a href="#jativad"   class="toc-item"><span class="toc-num">9</span> जातिवाद</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── MAIN ───────────────────────────── -->
+<main>
+
+  <!-- ── 1. PARICHAY ─────────────────── -->
+  <div class="section" id="parichay">
+    <div class="section-header primary-header">
+      <span class="section-icon">📖</span>
+      <h2>परिचय (Introduction)</h2>
+    </div>
+    <div class="section-body">
+      <p>प्राचीन सेमेटिक धर्म में प्राचीन निकट पूर्व और उत्तरपूर्वी अफ्रीका के सेमेटिक लोगों के बहुदेववादी धर्म शामिल हैं। चूंकि सेमेटिक शब्द संस्कृतियों के संदर्भ में एक व्यापक श्रेणी का प्रतिनिधित्व करता है, न कि भाषाओं के संदर्भ में, इसलिए "प्राचीन सेमेटिक धर्म" शब्द की निश्चित सीमाएँ केवल अनुमानित हैं और इसमें इस क्षेत्र के "गैर-सेमेटिक" भाषी लोगों के धर्म शामिल नहीं हैं, जैसे कि मिस्रवासी, एलामी, हित्ती, हुर्रियन, मिट्टानी, उरार्टियन, लुवियन, मिनोअन, यूनानी, फ्रिगियन, लिडियन, फारसी, मेदी, फिलिस्तीनी और पार्थियन।</p>
+
+      <p>सेमेटिक बहुदेववाद, यहोवावाद के माध्यम से अब्राहमिक एकेश्वरवाद में परिवर्तित हुआ। यहोवावाद कनानी मूर्तिपूजा का एक प्रकार था, जो इस्राएल और यहूदा के लौह युग के राज्यों के राष्ट्रीय देवता यहोवा पर केंद्रित था। इस प्रक्रिया में, यहोवा का संयोजन कनानी देवताओं के सर्वोच्च देवता एल के साथ हुआ, जिसका नाम "एल", या एलाह हिब्रू में "ईश्वर" के लिए एक शब्द है, जो अरबी शब्द ilāh और उसके सर्वनाम रूप अल्लाह "(ईश्वर)" से संबंधित है।</p>
+
+      <div class="highlight-box">
+        सेमेटिक धर्म (Semitic Religions) के अंतर्गत मुख्य रूप से तीन अब्राहमिक एकेश्वरवादी धर्म आते हैं: <strong>यहूदी धर्म (Judaism)</strong>, <strong>ईसाई धर्म (Christianity)</strong> और <strong>इस्लाम (Islam)</strong>। ये धर्म एक ईश्वर में विश्वास, पैगंबरों की परंपरा और एक ही मूल (इब्राहीम/अब्राहम) से विकसित हुए हैं।
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 2. ITIHAS ─────────────────────── -->
+  <div class="section" id="itihas">
+    <div class="section-header primary-header">
+      <span class="section-icon">🏛️</span>
+      <h2>इतिहास (History)</h2>
+    </div>
+    <div class="section-body">
+
+      <!-- Islam History -->
+      <div class="subsection islam-sub">
+        <h3>☪ इस्लाम (Islam)</h3>
+        <p>इस्लाम की स्थापना 7वीं शताब्दी ईस्वी में अरब प्रायद्वीप में पैगंबर मुहम्मद द्वारा की गई थी। यह एक एकेश्वरवादी धर्म है जो अल्लाह (ईश्वर) के प्रति समर्पण पर आधारित है। पैगंबर मुहम्मद ने कुरान की शिक्षाओं का प्रसार किया, जो 622 ईस्वी (हिजरा) में मक्का से मदीना प्रवास के बाद तेज़ी से फैला, और 632 ईस्वी तक पूरे अरब में स्थापित हो गया।</p>
+
+        <div class="kv"><span class="kv-label">उत्पत्ति और पैगंबर मुहम्मद:</span> इस्लाम के संस्थापक पैगंबर मुहम्मद (570-632 ईस्वी) हैं। मान्यतानुसार, उन्हें 40 वर्ष की आयु में (लगभग 610 ईस्वी) अल्लाह से संदेश प्राप्त हुए, जिसे उन्होंने कुरान के रूप में आगे बढ़ाया।</div>
+
+        <div class="kv"><span class="kv-label">हिजरा और मदीना:</span> 622 ईस्वी में, मक्का में विरोध के कारण पैगंबर मुहम्मद ने मदीना की यात्रा की, जिसे 'हिजरा' कहा जाता है। यह इस्लामिक कैलेंडर की शुरुआत का प्रतीक है।</div>
+
+        <div class="kv"><span class="kv-label">इस्लाम का प्रसार:</span> पैगंबर की मृत्यु (632 ईस्वी) के बाद, खलीफाओं के नेतृत्व में इस्लाम तेज़ी से अरब के बाहर फैला। खलीफाओं ने मिस्र, सीरिया, फारस (ईरान) और उससे आगे तक इस्लामिक साम्राज्य का विस्तार किया।</div>
+
+        <div class="kv"><span class="kv-label">प्रमुख समुदाय:</span> इस्लाम मुख्य रूप से दो प्रमुख समुदायों में विभाजित है: <strong>सुन्नी (लगभग 85%)</strong> और <strong>शिया (लगभग 15%)</strong>।</div>
+
+        <div class="kv"><span class="kv-label">इस्लामिक सभ्यता का स्वर्ण युग:</span> 8वीं से 13वीं शताब्दी के बीच, बगदाद, कॉर्डोबा और काहिरा जैसे केंद्र ज्ञान, विज्ञान, दर्शन और कला के प्रमुख स्थान बने।</div>
+
+        <div class="callout callout-islam">
+          <strong>भारत में इस्लाम:</strong>
+          भारतीय उपमहाद्वीप में इस्लाम 7वीं शताब्दी में अरब व्यापारियों के माध्यम से आया, जो केरल तट पर बसे। इसके बाद, 8वीं शताब्दी में मोहम्मद बिन कासिम द्वारा सिंध पर विजय और फिर 11वीं शताब्दी से सुल्तानों और मुगल शासकों के माध्यम से इसका प्रसार व्यापक हुआ।
+        </div>
+      </div>
+
+      <!-- Christianity History -->
+      <div class="subsection christ-sub">
+        <h3>✝ ईसाई धर्म (Christianity)</h3>
+        <p>ईसाई धर्म का इतिहास 2,000 वर्ष से अधिक पुराना है, जिसकी शुरुआत पहली शताब्दी ईस्वी में यहूदी धर्म की एक शाखा के रूप में नाज़रेथ के यीशु (ईसा मसीह) के जीवन, शिक्षाओं और पुनरुत्थान पर आधारित है। यह प्रेम, क्षमा और एकेश्वरवाद का संदेश देकर रोमन साम्राज्य से फैलते हुए आज दुनिया का सबसे बड़ा धर्म बन गया है, जिसके मुख्य भाग कैथोलिक, प्रोटेस्टेंट और ऑर्थोडॉक्स हैं।</p>
+
+        <div class="kv"><span class="kv-label">उत्पत्ति और संस्थापक (1वीं शताब्दी):</span> ईसा मसीह का जन्म बेथलहम में हुआ और उन्होंने गलीलिया (इजराइल) में अपना संदेश फैलाया। उनका उद्देश्य लोगों को पाप से मुक्ति और ईश्वर के प्रेम का मार्ग दिखाना था।</div>
+
+        <div class="kv"><span class="kv-label">सलीब पर चढ़ाया जाना और पुनरुत्थान:</span> यीशु के बढ़ते प्रभाव से यहूदी रूढ़िवादी गुरु नाराज हो गए, जिसके बाद रोमन गवर्नर पोंटियस ने उन्हें सूली पर चढ़ा दिया। ईसाई विश्वास के अनुसार, तीन दिन बाद वे पुनर्जीवित हो गए।</div>
+
+        <div class="kv"><span class="kv-label">प्रसार (Apostolic Age):</span> यीशु के शिष्यों (जैसे सेंट पॉल) ने रोमन साम्राज्य में धर्म का प्रसार किया। 313 ईस्वी में सम्राट कॉन्सटेंटाइन द्वारा इसे वैधानिकता मिलने के बाद यह तेजी से फैला।</div>
+
+        <div class="kv"><span class="kv-label">विभाजन और विकास:</span> 1054 ईस्वी में 'ग्रेट शिज्म' (Great Schism) से चर्च पूर्वी (ऑर्थोडॉक्स) और पश्चिमी (कैथोलिक) में बंट गया। 16वीं शताब्दी में मार्टिन लूथर के सुधार आंदोलन (Reformation) ने प्रोटेस्टेंट संप्रदाय को जन्म दिया।</div>
+
+        <div class="callout callout-christ">
+          <strong>भारत में ईसाई धर्म:</strong>
+          परंपरा के अनुसार, ईसा मसीह के शिष्य संत थॉमस 52 ईस्वी में भारत आए थे।
+          <br/><strong>प्रमुख ग्रंथ:</strong> ईसाई धर्म का पवित्र ग्रंथ बाइबिल है, जिसके दो भाग हैं— पुराना नियम और नया नियम।
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── 3. ISHWAR ──────────────────────── -->
+  <div class="section" id="ishwar">
+    <div class="section-header gold-header">
+      <span class="section-icon">🌟</span>
+      <h2>ईश्वर का सिद्धांत (Concept of God)</h2>
+    </div>
+    <div class="section-body">
+
+      <div class="subsection juda-sub">
+        <h3>✡ यहूदी धर्म में ईश्वर</h3>
+        <p><strong>यहूदी</strong> एकेश्वरवादी हैं, जो मानते हैं कि ईश्वर एक है, निराकार है, और ब्रह्मांड का निर्माता है। वे पवित्र ग्रंथ 'तनख' (Tanakh) को मानते हैं और ईश्वर के नाम का उच्चारण करने के बजाय आदरपूर्वक 'हाशेम' (The Name) कहते हैं।</p>
+        <div class="kv"><span class="kv-label">मूल नाम:</span> यहोवा (Yahweh/YHWH) को सबसे पवित्र नाम माना जाता है, जो हिब्रू भाषा में है।</div>
+        <div class="kv"><span class="kv-label">अन्य नाम:</span> अदोनाई (Adonai - मेरे प्रभु), एलोहिम (Elohim - ईश्वर), और शद्दई (Shaddai - सर्वशक्तिमान)।</div>
+        <div class="kv"><span class="kv-label">अवधारणा:</span> यहूदी मानते हैं कि ईश्वर निर्गुण, अनंत और सभी वर्णनों से परे हैं, जो पैगंबर मूसा के माध्यम से प्रकट हुए थे।</div>
+        <div class="kv"><span class="kv-label">उपासना:</span> यहूदी आराधनालय (Synagogue) में इब्रानी भाषा में प्रार्थना करते हैं और ईश्वर को एकेश्वरवादी (एक ही ईश्वर) के रूप में पूजते हैं।</div>
+        <div class="callout callout-judaism">
+          यहूदी धर्म में ईश्वर को हमेशा पुल्लिंग व्याकरणिक लेखों के साथ ही संदर्भित किया जाता है और वे <strong>मूर्ति पूजा का समर्थन नहीं करते।</strong>
+        </div>
+      </div>
+
+      <div class="subsection islam-sub">
+        <h3>☪ इस्लाम में ईश्वर (अल्लाह)</h3>
+        <p><strong>इस्लाम</strong> धर्म में ईश्वर को अल्लाह (Allah) कहा जाता है, जो अरबी में 'एकमात्र ईश्वर' या 'सर्वोच्च सत्ता' का प्रतीक है। इस्लाम कड़ाई से एकेश्वरवाद (तौहीद) में विश्वास करता है, जिसके अनुसार अल्लाह ही संपूर्ण ब्रह्मांड का सृष्टिकर्ता, पालनकर्ता और एकमात्र पूजनीय ईश्वर हैं, जिनका कोई साझेदार या बहुवचन नहीं है।</p>
+        <div class="kv"><span class="kv-label">अर्थ:</span> अल्लाह का शाब्दिक अर्थ 'ईश्वर' है जिसका उपयोग अरबी भाषी मुसलमान और ईसाई दोनों करते हैं।</div>
+        <div class="kv"><span class="kv-label">एकेश्वरवाद:</span> इस्लाम में विश्वास की बुनियाद है कि अल्लाह के अलावा कोई दूसरा ईश्वर नहीं है।</div>
+        <div class="kv"><span class="kv-label">अवधारणा:</span> मुसलमान अल्लाह को सर्वव्यापी मानते हैं, जो निराकार है और जिसकी इच्छा के बिना कुछ भी घटित नहीं हो सकता।</div>
+        <div class="kv"><span class="kv-label">प्रार्थना:</span> मुस्लिम नमाज़ के दौरान "अल्लाहु अकबर" (अल्लाह सबसे महान है) कहते हैं।</div>
+        <div class="callout callout-islam">
+          <strong>संक्षेप में</strong> — अल्लाह ही इस्लाम के केंद्र में हैं और वे ही एकमात्र सर्वोच्च सत्ता हैं जिन्हें 'खुदा' (फ़ारसी) या 'भगवान' (हिंदी) के समकक्ष समझा जा सकता है।
+        </div>
+      </div>
+
+      <div class="subsection christ-sub">
+        <h3>✝ ईसाई धर्म में ईश्वर (त्रिमूर्ति)</h3>
+        <p><strong>ईसाई</strong> धर्म (Christianity) में केवल एक ही ईश्वर (एकेश्वरवाद) को माना जाता है, जो सृष्टि के रचयिता हैं। ईसाई ईश्वर को तीन रूपों—त्रिमूर्ति (Trinity)—के रूप में मानते हैं: <strong>परमपिता परमेश्वर (पिता)</strong>, <strong>यीशु मसीह (पुत्र)</strong>, और <strong>पवित्र आत्मा</strong>। यीशु को ईश्वर का पुत्र, अवतार और मानव जाति का मुक्तिदाता माना जाता है।</p>
+        <div class="kv"><span class="kv-label">ईश्वर का स्वरूप:</span> ईसाई मानते हैं कि ईश्वर निराकार है, लेकिन वह पिता, पुत्र और पवित्र आत्मा के रूप में प्रकट होता है।</div>
+        <div class="kv"><span class="kv-label">परमपिता परमेश्वर (God the Father):</span> सृष्टि के रचयिता और सर्वशक्तिमान।</div>
+        <div class="kv"><span class="kv-label">यीशु मसीह (Jesus Christ - पुत्र):</span> ईसाई मान्यता के अनुसार, ईश्वर ने अपने पुत्र यीशु को दुनिया को पापों से बचाने के लिए भेजा। उन्हें मसीहा (Messiah) माना जाता है।</div>
+        <div class="kv"><span class="kv-label">पवित्र आत्मा (Holy Spirit):</span> यह दुनिया में ईश्वर की उपस्थिति और मार्गदर्शन का प्रतीक है।</div>
+        <div class="kv"><span class="kv-label">पवित्र ग्रंथ:</span> बाइबिल (Bible) ईसाइयों का मुख्य धर्मग्रंथ है।</div>
+        <div class="callout callout-christ">
+          <strong>ईसाई ईश्वर के संदर्भ में महत्वपूर्ण तथ्य:</strong><br/>
+          <strong>क्रिसमस:</strong> यीशु मसीह के जन्म के उपलक्ष्य में मनाया जाता है।<br/>
+          <strong>ईस्टर:</strong> यीशु के पुनरुत्थान (मृत्यु के बाद फिर से जीवित होना) के उपलक्ष्य में मनाया जाता है।<br/>
+          <strong>प्रतीक:</strong> 'क्रॉस' (Cross) ईसाई धर्म का मुख्य प्रतीक है।<br/>
+          अधिकांश ईसाई (कैथोलिक, प्रोटेस्टेंट, ऑर्थोडॉक्स) इस त्रिएक स्वरूप को ही मानते हैं।
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── 4. PAIGAMBAR ──────────────────── -->
+  <div class="section" id="paigambar">
+    <div class="section-header neutral-header">
+      <span class="section-icon">📜</span>
+      <h2>पैगम्बर की परम्पराय (Prophetic Traditions)</h2>
+    </div>
+    <div class="section-body">
+      <p>सामी (Semitic) या इब्राहीमी धर्मों (यहूदी, ईसाई, इस्लाम) में नबी (पैगंबर) परंपरा सर्वोच्च ईश्वरीय संदेश वाहक की रही है। ये पैगंबर एकेश्वरवाद, नैतिकता और सामाजिक न्याय का संदेश देते हैं, जो ईश्वर (Revelation) से सीधे प्राप्त होता है।</p>
+
+      <!-- Judaism Prophets -->
+      <div class="subsection juda-sub">
+        <h3>✡ यहूदी धर्म में पैगंबर (नेवी'इम)</h3>
+        <p><strong>यहूदी धर्म</strong> में पैगंबर (नेवी'इम) ईश्वर के संदेशवाहक होते हैं, जो लोगों को धार्मिक मार्ग दर्शन, नैतिक सुधार, और ईश्वर की इच्छा का संदेश देते हैं। मूसा सबसे महान पैगंबर माने जाते हैं, जिन्होंने तोराह प्राप्त की। तालमुद के अनुसार, यहूदी परंपरा में <strong>48 पुरुष और 7 महिला पैगंबर</strong> (जैसे सारा, देबोरा) हैं, जिनका संदेश स्थायी महत्व का है।</p>
+
+        <p><strong>यहूदी धर्म में आये पैगंबर के नाम:</strong></p>
+        <div class="juda-prophet-table">
+          <ul>
+            <li>अब्राहम (Abraham)</li>
+            <li>इसहाक (Isaac)</li>
+            <li>याकूब (Jacob)</li>
+            <li>मूसा (Moses)</li>
+            <li>ऐरोन (Aaron)</li>
+            <li>यहोशू (Joshua)</li>
+            <li>पीनहास (Phinehas)</li>
+            <li>एली (Eli)</li>
+            <li>एल्काना (Elkanah)</li>
+            <li>शमूएल (Samuel)</li>
+            <li>घूमना-फिरना (Gad)</li>
+            <li>नतन (Nathan)</li>
+            <li>डेविड (David)</li>
+            <li>अहिजाह शिलोनी</li>
+            <li>सोलोमन (Solomon)</li>
+            <li>इड्डो (Iddo)</li>
+            <li>ओबदिया (Obadiah)</li>
+            <li>कोचवान (Jehu)</li>
+            <li>अजारिया (Azariah)</li>
+            <li>यहजीएल (Jahaziel)</li>
+            <li>एलीएज़र (Eliezer)</li>
+            <li>एलिजा (Elijah)</li>
+            <li>एलीशा (Elisha)</li>
+            <li>मिकाइया (Micaiah)</li>
+            <li>जोनाह (Jonah)</li>
+            <li>अमोस (Amos)</li>
+            <li>होशे (Hosea)</li>
+            <li>आमोस (Amoz)</li>
+            <li>यशायाह (Isaiah)</li>
+            <li>मीका (Micah)</li>
+            <li>योएल (Joel)</li>
+            <li>सपन्याह (Zephaniah)</li>
+            <li>नाहूम (Nahum)</li>
+            <li>हबक्कूक (Habakkuk)</li>
+            <li>ऊरिय्याह (Uriah)</li>
+            <li>यिर्मयाह (Jeremiah)</li>
+            <li>ईजेकील (Ezekiel)</li>
+            <li>डैनियल (Daniel)</li>
+            <li>मेहसेया (Mehseiah)</li>
+            <li>नेरिय्याह (Neriah)</li>
+            <li>बारूक बेन नेरिया</li>
+            <li>सरायाह (Seraiah)</li>
+            <li>हाग्गै (Haggai)</li>
+            <li>जकर्याह (Zechariah)</li>
+            <li>मोर्दकै बिल शान</li>
+            <li>मालाची (Malachi)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Islam Prophets -->
+      <div class="subsection islam-sub">
+        <h3>☪ इस्लाम में पैगंबर परंपरा</h3>
+        <p><strong>इस्लाम</strong> में पैगंबर परंपरा का अर्थ ईश्वर (अल्लाह) द्वारा मानवता के मार्गदर्शन के लिए चुने गए पैगंबरों (नबियों) और रसूलों पर विश्वास करना है, जो एकेश्वरवाद (तौहीद), नैतिकता और दिव्य संदेश फैलाते हैं। पैगंबर मुहम्मद (ﷺ) अंतिम पैगंबर हैं, और पैगंबरों की श्रृंखला आदम से शुरू होकर उन पर समाप्त होती है। कुरान में अल्लाह द्वारा भेजे गए <strong>25 प्रमुख पैगंबरों</strong> (नबियों) का नाम से उल्लेख किया गया है।</p>
+
+        <div class="prophet-grid">
+          <div class="prophet-card"><span class="prophet-num">1</span><span class="prophet-hi">आदम</span><span class="prophet-en">Adam</span></div>
+          <div class="prophet-card"><span class="prophet-num">2</span><span class="prophet-hi">इदरीस</span><span class="prophet-en">Idris</span></div>
+          <div class="prophet-card"><span class="prophet-num">3</span><span class="prophet-hi">नूह</span><span class="prophet-en">Noah</span></div>
+          <div class="prophet-card"><span class="prophet-num">4</span><span class="prophet-hi">हुद</span><span class="prophet-en">Hud</span></div>
+          <div class="prophet-card"><span class="prophet-num">5</span><span class="prophet-hi">सालिह</span><span class="prophet-en">Salih</span></div>
+          <div class="prophet-card"><span class="prophet-num">6</span><span class="prophet-hi">इब्राहिम</span><span class="prophet-en">Abraham</span></div>
+          <div class="prophet-card"><span class="prophet-num">7</span><span class="prophet-hi">लूत</span><span class="prophet-en">Lot</span></div>
+          <div class="prophet-card"><span class="prophet-num">8</span><span class="prophet-hi">इस्माइल</span><span class="prophet-en">Ishmael</span></div>
+          <div class="prophet-card"><span class="prophet-num">9</span><span class="prophet-hi">इसहाक</span><span class="prophet-en">Isaac</span></div>
+          <div class="prophet-card"><span class="prophet-num">10</span><span class="prophet-hi">याकूब</span><span class="prophet-en">Jacob</span></div>
+          <div class="prophet-card"><span class="prophet-num">11</span><span class="prophet-hi">यूसुफ</span><span class="prophet-en">Joseph</span></div>
+          <div class="prophet-card"><span class="prophet-num">12</span><span class="prophet-hi">अय्यूब</span><span class="prophet-en">Job</span></div>
+          <div class="prophet-card"><span class="prophet-num">13</span><span class="prophet-hi">शुऐब</span><span class="prophet-en">Jethro</span></div>
+          <div class="prophet-card"><span class="prophet-num">14</span><span class="prophet-hi">मूसा</span><span class="prophet-en">Moses</span></div>
+          <div class="prophet-card"><span class="prophet-num">15</span><span class="prophet-hi">हारून</span><span class="prophet-en">Aaron</span></div>
+          <div class="prophet-card"><span class="prophet-num">16</span><span class="prophet-hi">जुल्किफ़</span><span class="prophet-en">Ezekiel</span></div>
+          <div class="prophet-card"><span class="prophet-num">17</span><span class="prophet-hi">दाऊद</span><span class="prophet-en">David</span></div>
+          <div class="prophet-card"><span class="prophet-num">18</span><span class="prophet-hi">सुलेमान</span><span class="prophet-en">Solomon</span></div>
+          <div class="prophet-card"><span class="prophet-num">19</span><span class="prophet-hi">इलियास</span><span class="prophet-en">Elijah</span></div>
+          <div class="prophet-card"><span class="prophet-num">20</span><span class="prophet-hi">अलियासा</span><span class="prophet-en">Elisha</span></div>
+          <div class="prophet-card"><span class="prophet-num">21</span><span class="prophet-hi">यूनुस</span><span class="prophet-en">Jonah</span></div>
+          <div class="prophet-card"><span class="prophet-num">22</span><span class="prophet-hi">जकारिया</span><span class="prophet-en">Zechariah</span></div>
+          <div class="prophet-card"><span class="prophet-num">23</span><span class="prophet-hi">याह्या</span><span class="prophet-en">John the Baptist</span></div>
+          <div class="prophet-card"><span class="prophet-num">24</span><span class="prophet-hi">ईसा</span><span class="prophet-en">Jesus</span></div>
+          <div class="prophet-card" style="background:linear-gradient(135deg,#d4edda,#c3e6cb); border-color: var(--islam)"><span class="prophet-num" style="background:var(--islam)">25</span><span class="prophet-hi">मुहम्मद ﷺ</span><span class="prophet-en">Muhammad (Final Prophet)</span></div>
+        </div>
+
+        <div class="callout callout-islam" style="margin-top:16px">
+          <strong>इस्लाम में महिला पैगंबर:</strong>
+          इस्लाम में महिला पैगंबर भी हुईं पर इनका होना और न होने पर कुछ प्रश्न रहे। जैसे कुछ ज़ाहिरी धर्मशास्त्री तर्क देते हैं कि मरियम, साथ ही इसहाक की माता सारा और मूसा की माता आसिया, पैगंबर थीं। वे इस निष्कर्ष को कुरान में वर्णित उन उदाहरणों पर आधारित करते हैं जहाँ स्वर्गदूतों ने महिलाओं से बात की और उनके कार्यों का दिव्य मार्गदर्शन किया। ज़ाहिरी इब्न हज़्म (मृत्यु 1064) के अनुसार, महिलाएं पैगंबरी तो प्राप्त कर सकती थीं, लेकिन संदेशवाहक नहीं, जो केवल पुरुषों को ही प्राप्त हो सकती थी।
+        </div>
+      </div>
+
+      <!-- Christianity Prophets -->
+      <div class="subsection christ-sub">
+        <h3>✝ ईसाई धर्म में भविष्यवाणी परंपरा</h3>
+        <p><strong>ईसाई</strong> धर्म में भविष्यवाणी परंपरा पुराने नियम के नबियों से शुरू होकर यीशु मसीह में पूर्णता प्राप्त करती है जो ईश्वरीय रहस्योद्घाटन, मार्गदर्शन और पश्चाताप का संदेश देती है।</p>
+
+        <p><strong>बाइबिल में प्रमुख भविष्यवक्ता (Major Prophets):</strong></p>
+        <ul>
+          <li><strong>यशायाह (Isaiah):</strong> मसीहा के आने की सबसे स्पष्ट भविष्यवाणी की।</li>
+          <li><strong>यिर्मयाह (Jeremiah):</strong> यहूदा के न्याय और बेबीलोन की कैद के बारे में चेतावनी दी।</li>
+          <li><strong>यहेजकेल (Ezekiel):</strong> दर्शन और प्रतीकात्मक कार्यों के माध्यम से संदेश दिए।</li>
+          <li><strong>दानियेल (Daniel):</strong> भविष्य की घटनाओं और सपनों की व्याख्या के लिए जाने जाते हैं।</li>
+        </ul>
+
+        <p><strong>12 लघु भविष्यवक्ता (Minor Prophets):</strong></p>
+        <ol>
+          <li>होशे (Hosea)</li>
+          <li>योएल (Joel)</li>
+          <li>आमोस (Amos)</li>
+          <li>ओबद्याह (Obadiah)</li>
+          <li>योना (Jonah)</li>
+          <li>मीका (Micah)</li>
+          <li>नहूम (Nahum)</li>
+          <li>हबक्कूक (Habakkuk)</li>
+          <li>सफन्याह (Zephaniah)</li>
+          <li>हाग्गै (Haggai)</li>
+          <li>जकर्याह (Zechariah)</li>
+          <li>मलाकी (Malachi)</li>
+        </ol>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── 5. UPASANA ────────────────────── -->
+  <div class="section" id="upasana">
+    <div class="section-header primary-header">
+      <span class="section-icon">🕌</span>
+      <h2>उपासना और पारलोकिक जीवन (Worship & Afterlife)</h2>
+    </div>
+    <div class="section-body">
+      <p>सेमेटिक धर्मों (यहूदी, ईसाई, इस्लाम) में पूजा एकेश्वरवाद (एक ईश्वर) पर आधारित है जिसमें ईश्वर के प्रति समर्पण, प्रार्थना, उपवास और पवित्र ग्रंथों के अध्ययन पर जोर दिया जाता है।</p>
+
+      <!-- Judaism Worship -->
+      <div class="subsection juda-sub">
+        <h3>✡ यहूदी धर्म में उपासना</h3>
+        <p><strong>यहूदी</strong> धर्म (Judaism) में पूजा-अर्चना का केंद्र ईश्वर की एकता, पवित्र ग्रंथों (तोरा) का अध्ययन और प्रार्थना है। यहूदी केवल एक ईश्वर (जिसे हिब्रू में अदोनाई या 'हाशेम' कहते हैं) को मानते हैं। यहूदी धर्म में मूर्ति या किसी भी साकार रूप की पूजा पूरी तरह से मना है।</p>
+        <p>तनाख यहूदी धर्म का प्रमुख पवित्र ग्रंथ है। इसके तीन भाग हैं: कानून (तोराह), पैगंबर (नेवी'इम) और लेखन (केतुविम)। पारंपरिक यहूदी दिन में तीन बार — सुबह (शहारिथ), दोपहर (मिन्हा), और शाम (मारीब) — यरूशलेम की ओर मुंह करके प्रार्थना करते हैं जिसे सिनागॉग (Synagogue) या खबाद हाउस में सामूहिक रूप से किया जाता है।</p>
+        <p>यहूदी विधि के अनुसार, प्रार्थना के दौरान खड़े होना और झुकना अनिवार्य है, लेकिन अन्य गतिविधियाँ भी आराधना के प्रति श्रद्धा को दर्शा सकती हैं। सभाओं में महिलाओं और पुरुषों को अलग-अलग जगह दी जाती है जहाँ वे प्रार्थना करते हैं या फिर सभाघर में एक परदा कर दिया जाता है।</p>
+
+        <p><strong>यहूदी धर्म में परलोक (Afterlife):</strong></p>
+        <ul>
+          <li><strong>ओलम हा-बा (Olam Ha-Ba - आने वाली दुनिया):</strong> यह सबसे आम अवधारणा है जिसे आने वाला संसार या आत्मा की दिव्य पूर्णता की यात्रा माना जाता है।</li>
+          <li><strong>गान ईडन (Gan Eden - स्वर्ग):</strong> धर्मी आत्माओं को गान ईडन का सुख मिलता है।</li>
+          <li><strong>गेहिनोम (Gehinnom - नरक):</strong> पापी आत्माएं गेहिनोम में शुद्धि से गुजरती हैं जो एक प्रकार का दंड या सुधार का स्थान है।</li>
+          <li><strong>शियोल (Sheol):</strong> प्राचीन यहूदी ग्रंथों में मृत्यु के बाद सभी आत्माओं के लिए एक अंधकारमय स्थान, जो एक समान विश्राम अवस्था है। कुछ यहूदी परंपराओं (जैसे कबलाह) में आत्माओं के पुनर्जन्म (Gilgul) में विश्वास किया जाता है।</li>
+        </ul>
+      </div>
+
+      <!-- Islam Worship -->
+      <div class="subsection islam-sub">
+        <h3>☪ इस्लाम में उपासना (इबादत)</h3>
+        <p><strong>इस्लाम</strong> में अल्लाह को सबसे बड़ा दर्जा दिया गया है। कुरान इस्लाम धर्म का प्रमुख पवित्र ग्रंथ है। इस्लाम में ईश्वर को कभी भी किसी छवि में चित्रित नहीं किया जाता है — कुरान विशेष रूप से ईश्वर की अद्वितीय संप्रभुता में किसी को भागीदार बनाने से मना करता है, क्योंकि उसे एक ऐसा पूर्ण, अविभाज्य और अतुलनीय प्राणी माना जाता है जो किसी के समान नहीं है। कुरान में ईश्वर का सबसे संक्षिप्त और सबसे व्यापक वर्णन सूरत अल-इखलास में मिलता है।</p>
+
+        <p>प्रमुख इबादतों में दिन में 5 बार नमाज़ (फजर, जुहर, असर, मगरिब, ईशा), रमज़ान के रोज़े, गरीबों को दान (ज़कात), और हज यात्रा शामिल हैं। यह एक व्यापक अवधारणा है जिसमें अल्लाह की प्रसन्नता के लिए किया गया हर नेक काम इबादत माना जाता है।</p>
+        <p>इस्लाम में इबादत का अर्थ अल्लाह के प्रति समर्पण है जो वज़ू (पवित्रता) के साथ दिन में 5 बार नमाज़ अदा करके, कुरान पढ़कर और नेक काम करके की जाती है। मुख्य रूप से किबला (मक्का) की ओर मुंह करके खड़े होकर, झुककर (रुकू) और सजदा करके अरबी में प्रार्थनाएं पढ़ी जाती हैं। इस्लामी परंपरा के अनुसार महिलाओं के लिए घर की चारदीवारी के भीतर नमाज़ पढ़ना अधिक सुरक्षित और श्रेयस्कर (अफजल) माना गया है।</p>
+
+        <p><strong>इस्लाम धर्म में मुख्य 2 समूह:</strong></p>
+        <ul>
+          <li><strong>Sunni (सुन्नी मुस्लिम):</strong> दुनिया में लगभग 85-90% मुसलमान सुन्नी हैं। सुन्नियों ने ख़लीफ़ा (Caliph) को मुसलमानों की सर्वसम्मति से चुना जाने वाला नेता माना।</li>
+          <li><strong>Shiya (शिया):</strong> दुनिया में लगभग 10-15% मुसलमान शिया हैं। इनका मानना है कि मुसलमानों का नेतृत्व हज़रत अली और उनके वंश को मिलना चाहिए था।</li>
+        </ul>
+
+        <p><strong>इस्लाम में परलोक (आख़िरत):</strong></p>
+        <ul>
+          <li><strong>बर्ज़ख (कब्र का जीवन):</strong> मृत्यु के बाद और क़यामत से पहले की मध्यवर्ती अवस्था, जहां रूह (आत्मा) कर्मों के अनुसार शांति या सजा महसूस करती है।</li>
+          <li><strong>क़यामत और हश्र:</strong> दुनिया का अंत, सभी का पुनरुत्थान और मैदान-ए-हश्र में इकट्ठे होना।</li>
+          <li><strong>हिसाब (हिसाब-किताब):</strong> अल्लाह इंसान के नेक और बुरे कर्मों का लेखा-जोखा लेंगे।</li>
+          <li><strong>मिज़ान (तराजू):</strong> कर्मों को तौला जाएगा।</li>
+          <li><strong>जन्नत (स्वर्ग):</strong> मोमिनों और नेक लोगों के लिए अनंत सुखों का स्थान।</li>
+          <li><strong>जहन्नम (नरक):</strong> काफिरों और पापी लोगों के लिए पीड़ादायक स्थान।</li>
+        </ul>
+      </div>
+
+      <!-- Christianity Worship -->
+      <div class="subsection christ-sub">
+        <h3>✝ ईसाई धर्म में उपासना (आराधना)</h3>
+        <p><strong>ईसाई</strong> धर्म (Christianity) में वर्शिप यानी आराधना का मुख्य उद्देश्य आत्मा और सच्चाई से परमेश्वर (ईश्वर) के प्रति प्रेम और सम्मान व्यक्त करना है। आराधना में प्रार्थना, यीशु मसीह के गीतों के माध्यम से स्तुति, बाइबल पढ़ना और कृतज्ञता व्यक्त करना शामिल है। यह यीशु के नाम में की जाती है।</p>
+        <p>बाइबल ईसाई धर्म का प्रमुख पवित्र ग्रंथ है। चर्च (कलीसिया) में सामूहिक आराधना मुख्य है, लेकिन व्यक्तिगत या निजी आराधना भी की जाती है। ईसाई परमेश्वर से किसी भी मुद्रा (बैठकर, खड़े होकर, घुटने टेककर) और किसी भी समय प्रार्थना कर सकते हैं।</p>
+        <p>ईसाई धर्म में महिलाएं प्रार्थना, बाइबल अध्ययन, समूह आराधना (Worship), सेवा कार्य और गायन के माध्यम से ईश्वर की उपासना करती हैं। वे चर्च की गतिविधियों, जैसे कि संडे स्कूल पढ़ाना, दान देना और मिशनरी कार्यों में सक्रिय भूमिका निभाती हैं। संक्षेप में ईसाई धर्म में स्त्री हो या पुरुष, सभी को ईश्वर की आराधना करने का समान अवसर प्राप्त है।</p>
+
+        <p><strong>ईसाई धर्म में मुख्य 4 समूह:</strong></p>
+        <div class="community-grid">
+          <div class="community-card cc-christ">
+            <h4>1) Catholic (कैथोलिक)</h4>
+            <p>सबसे बड़ा ईसाई समूह — पूरी दुनिया के लगभग आधे ईसाई कैथोलिक हैं। नेता: पोप (Pope)। Father/पादरी द्वारा Mass (प्रार्थना)। मरियम (Mother Mary) और संतों को काफी मान्यता। कैथोलिक क्रॉस पर यीशु का शरीर बना होता है (Crucifix)।</p>
+          </div>
+          <div class="community-card cc-christ">
+            <h4>2) Protestant (प्रोटेस्टेंट)</h4>
+            <p>कैथोलिक चर्च से 16वीं सदी में अलग हुआ (Martin Luther के सुधार आंदोलन के कारण)। बाइबल को सर्वोच्च मानते हैं। Father की जगह Pastor होते हैं। उप-समूह: Baptist, Methodist, Lutheran आदि।</p>
+          </div>
+          <div class="community-card cc-christ">
+            <h4>3) Orthodox (ऑर्थोडॉक्स)</h4>
+            <p>कैथोलिक से 1054 ई. में अलग हुआ। परंपराएँ बहुत प्राचीन और जटिल। पूजा-पद्धति में आइकॉन (चिन्ह/चित्र) का बहुत प्रयोग। पादरी शादी कर सकते हैं (कुछ जगह)।</p>
+          </div>
+          <div class="community-card cc-christ">
+            <h4>4) Pentecostal (पेन्टेकोस्टल)</h4>
+            <p>20वीं सदी में शुरू हुआ। प्रार्थना में जोश, संगीत, ताली, नृत्य। "Holy Spirit experience" को सबसे महत्वपूर्ण मानते हैं। चमत्कार, faith healing और spiritual gifts पर जोर।</p>
+          </div>
+        </div>
+
+        <p><strong>ईसाई धर्म में परलोक (Afterlife):</strong></p>
+        <ul>
+          <li><strong>स्वर्ग (Heaven):</strong> यह एक ऐसी स्थिति है जहाँ आत्मा ईश्वर की उपस्थिति में अनंत शांति, प्रेम और सुख का अनुभव करती है, जहाँ न कोई दुख है न पीड़ा।</li>
+          <li><strong>नरक (Hell):</strong> यह ईश्वर से अलगाव की अवस्था है, जिसे अक्सर पीड़ा और अंधकार के स्थान के रूप में वर्णित किया गया है।</li>
+          <li><strong>पुनरुत्थान (Resurrection):</strong> ईसाई मानते हैं कि अंत के दिनों में, यीशु मसीह के लौटने पर, मृतकों को नए शरीरों में पुनर्जीवित किया जाएगा।</li>
+          <li><strong>शुद्धिकरण (Purgatory — मुख्यतः कैथोलिक):</strong> स्वर्ग जाने से पहले आत्मा को अपने पापों से शुद्ध होने के लिए एक मध्यवर्ती अवस्था से गुजरना पड़ता है।</li>
+          <li><strong>विश्वास का महत्व:</strong> मुक्ति के लिए, अधिकांश ईसाई यीशु मसीह पर विश्वास को आवश्यक मानते हैं, न कि केवल अच्छे कर्मों को।</li>
+        </ul>
+        <div class="callout callout-christ">
+          ईसाइयों के लिए मृत्यु जीवन का अंत नहीं बल्कि मसीह के साथ एक नए शाश्वत जीवन की शुरुआत है।
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── 6. NAITIKTA ───────────────────── -->
+  <div class="section" id="naitikta">
+    <div class="section-header gold-header">
+      <span class="section-icon">⚖️</span>
+      <h2>नैतिकता और आचार विचार (Ethics & Morality)</h2>
+    </div>
+    <div class="section-body">
+
+      <div class="subsection juda-sub">
+        <h3>✡ यहूदी धर्म में नैतिकता</h3>
+        <p><strong>यहूदी</strong> धर्म में नैतिकता (Ethics) और आचारशास्त्र (Moral System) का आधार ईश्वर और मानव के बीच की वाचा (Covenant) पर टिका है। यहूदी परंपरा के अनुसार नैतिक जीवन जीना केवल सामाजिक आवश्यकता नहीं, बल्कि ईश्वर की आज्ञा का पालन है।</p>
+        <p>यहूदी धर्म का मुख्य पवित्र ग्रंथ तनाख़ है, जिसे हिब्रू बाइबिल भी कहा जाता है। तनाख़ के तीन भाग हैं — तोरा (व्यवस्था), नबीइम (भविष्यवक्ता) और केतुवीम (लेख)। इनमें से तोरा, जिसे मूसा की व्यवस्था भी कहा जाता है, यहूदी नैतिक और धार्मिक जीवन का मुख्य आधार है।</p>
+        <p>तोरा में वर्णित <strong>दस आज्ञाएँ (Ten Commandments)</strong> यहूदी नैतिकता की नींव मानी जाती हैं। इनमें ईश्वर की एकता में विश्वास, माता-पिता का सम्मान, हत्या, चोरी और झूठी गवाही से बचने जैसे सिद्धांत शामिल हैं।</p>
+        <p>यहूदी धर्म में नैतिकता केवल व्यक्तिगत आचरण तक सीमित नहीं है, बल्कि सामाजिक न्याय (Social Justice) को भी अत्यंत महत्व दिया गया है। गरीबों, विधवाओं, अनाथों और परदेशियों के प्रति दया और सहायता को धार्मिक कर्तव्य माना गया है।</p>
+        <p>यहूदी नैतिकता का एक महत्वपूर्ण स्रोत तालमुद है, जिसमें रब्बियों द्वारा तोरा की व्याख्या और व्यावहारिक जीवन के लिए नियम दिए गए हैं। तालमुद में <strong>"तिक्कुन ओलाम" (दुनिया का सुधार)</strong> की अवधारणा मिलती है, जिसका अर्थ है समाज को बेहतर और न्यायपूर्ण बनाना।</p>
+        <p>यहूदी धर्म में नैतिकता का आधार <strong>"मित्ज़्वोत" (धार्मिक आदेश)</strong> हैं। परंपरा के अनुसार 613 मित्ज़्वोत हैं। <em>"अपने पड़ोसी से अपने समान प्रेम करो"</em> जैसी शिक्षा यहूदी नैतिकता का मूल सिद्धांत है।</p>
+        <p>यहूदी नैतिक विचारधारा में <strong>मानव गरिमा (Human Dignity)</strong> को भी बहुत महत्व दिया गया है। यह माना जाता है कि हर व्यक्ति ईश्वर की छवि में बनाया गया है। क्षमा, पश्चाताप (तेशुवाह) और सुधार की भावना भी यहूदी नैतिक प्रणाली के प्रमुख तत्व हैं।</p>
+      </div>
+
+      <div class="subsection islam-sub">
+        <h3>☪ इस्लाम में नैतिकता (अख़लाक)</h3>
+        <p><strong>इस्लाम</strong> में नैतिकता (अख़लाक) और आचारशास्त्र (एथिक्स) का आधार ईश्वर की एकता, जवाबदेही और दिव्य मार्गदर्शन पर आधारित है। इस्लामी नैतिक व्यवस्था केवल व्यक्तिगत आचरण तक सीमित नहीं है, बल्कि सामाजिक, आर्थिक और पारिवारिक जीवन को भी दिशा देती है।</p>
+        <p>इस्लाम का मुख्य पवित्र ग्रंथ क़ुरआन है, जिसमें मानव जीवन के लिए नैतिक सिद्धांत और मार्गदर्शन दिए गए हैं। क़ुरआन में सत्य, न्याय, दया, धैर्य, क्षमा और ईमानदारी जैसे गुणों पर विशेष बल दिया गया है। इसके साथ ही इस्लामी शिक्षाओं का दूसरा प्रमुख स्रोत हदीस है, जिसमें पैगंबर हज़रत मुहम्मद के कथन और आचरण संकलित हैं। उनका जीवन मुसलमानों के लिए सर्वोत्तम नैतिक आदर्श माना जाता है।</p>
+        <p>इस्लाम में नैतिकता का मूल सिद्धांत <strong>"तौहीद"</strong> अर्थात एकेश्वरवाद है। जब व्यक्ति यह मानता है कि एक सर्वशक्तिमान ईश्वर सब कुछ देख रहा है और हर कर्म का हिसाब होगा, तो उसमें नैतिक जिम्मेदारी की भावना उत्पन्न होती है। क़ुरआन के अनुसार प्रत्येक व्यक्ति को अपने कर्मों का उत्तर क़ियामत (न्याय दिवस) में देना होगा। इसलिए <strong>नीयत (इरादा)</strong> को बहुत महत्व दिया गया है।</p>
+        <p>इस्लामी नैतिकता में <strong>न्याय (अदल)</strong> को केंद्रीय स्थान प्राप्त है। क़ुरआन में आदेश दिया गया है कि न्याय पर दृढ़ रहो, चाहे वह अपने विरुद्ध ही क्यों न हो। इसी प्रकार <strong>दया (रहमत)</strong> और करुणा को भी अनिवार्य गुण बताया गया है। पैगंबर मुहम्मद ने सिखाया कि सबसे अच्छा व्यक्ति वह है जो दूसरों के लिए सबसे अधिक लाभदायक हो।</p>
+        <p>इस्लाम में पड़ोसियों, गरीबों, अनाथों और जरूरतमंदों के अधिकारों की रक्षा को धार्मिक कर्तव्य माना गया है। <strong>ज़कात (दान)</strong> और सदक़ा की व्यवस्था सामाजिक समानता और सहयोग की भावना को मजबूत करती है।</p>
+        <p>इस्लामी नैतिक प्रणाली में ईमानदारी और सच्चाई को अत्यधिक महत्व दिया गया है। व्यापार में धोखा, झूठ, रिश्वत और अन्याय को स्पष्ट रूप से निषिद्ध किया गया है। परिवारिक जीवन में माता-पिता का सम्मान, पति-पत्नी के अधिकारों की रक्षा और बच्चों की सही परवरिश को नैतिक कर्तव्य बताया गया है। इसके अतिरिक्त संयम, धैर्य और क्षमा जैसे गुण व्यक्ति के चरित्र को सुदृढ़ बनाते हैं।</p>
+      </div>
+
+      <div class="subsection christ-sub">
+        <h3>✝ ईसाई धर्म में नैतिकता</h3>
+        <p><strong>ईसाई</strong> धर्म में नैतिकता और आचारशास्त्र का आधार प्रेम, करुणा और ईश्वर की इच्छा के पालन पर आधारित है। ईसाई नैतिक शिक्षाओं का मुख्य स्रोत बाइबिल है, जिसमें दो प्रमुख भाग हैं — पुराना नियम और नया नियम।</p>
+        <p>पुराने नियम में नैतिक जीवन के लिए <strong>दस आज्ञाएँ</strong> दी गई हैं, जिनमें हत्या, चोरी, झूठ और अन्याय से बचने की शिक्षा मिलती है। नए नियम में विशेष रूप से यीशु मसीह की शिक्षाओं को महत्व दिया गया है।</p>
+        <p>यीशु मसीह ने प्रेम को नैतिकता का सर्वोच्च सिद्धांत बताया। उनका प्रसिद्ध उपदेश <em>"अपने पड़ोसी से अपने समान प्रेम करो"</em> ईसाई नैतिकता का केंद्र है। इसके अतिरिक्त <em>"शत्रुओं से प्रेम करो"</em> और <em>"जो तुम चाहते हो कि लोग तुम्हारे साथ करें, वैसा ही तुम भी उनके साथ करो"</em> जैसे सिद्धांत उच्च नैतिक आदर्श प्रस्तुत करते हैं। इन्हें <strong>"Golden Rule"</strong> भी कहा जाता है।</p>
+        <p>ईसाई नैतिकता में क्षमा और दया को विशेष स्थान दिया गया है। यीशु ने सिखाया कि यदि कोई व्यक्ति गलती करे तो उसे क्षमा करना चाहिए, जैसे ईश्वर मनुष्य को क्षमा करता है। विनम्रता, सेवा-भाव और त्याग भी ईसाई नैतिक जीवन के महत्वपूर्ण तत्व हैं।</p>
+        <p>ईसाई धर्म में नैतिकता केवल व्यक्तिगत पवित्रता तक सीमित नहीं है, बल्कि सामाजिक न्याय पर भी बल देती है। गरीबों, बीमारों, अनाथों और जरूरतमंदों की सहायता को ईश्वर की सेवा के समान माना गया है। दान और सेवा को धार्मिक कर्तव्य समझा जाता है।</p>
+        <p>ईसाई नैतिक विचारधारा में <strong>मानव गरिमा</strong> का सिद्धांत भी महत्वपूर्ण है। यह विश्वास किया जाता है कि मनुष्य ईश्वर की छवि में बनाया गया है, इसलिए प्रत्येक व्यक्ति सम्मान और अधिकार का अधिकारी है। सत्य, ईमानदारी, पवित्रता और आत्म-संयम जैसे गुणों को आदर्श माना गया है।</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── 7. JANSANKHYA ─────────────────── -->
+  <div class="section" id="jansankhya">
+    <div class="section-header primary-header">
+      <span class="section-icon">📊</span>
+      <h2>भारत में जनसंख्या अनुपात (Population Ratio in India)</h2>
+    </div>
+    <div class="section-body">
+
+      <div class="img-placeholder">
+        <span class="icon">📈</span>
+        <p><strong>भारत में धर्मों का जनसंख्या अनुपात</strong></p>
+        <p>(Population Ratio of Religions in India — Chart / Figure from Document)</p>
+      </div>
+
+      <p><strong>धर्मों की तुलनात्मक सारणी:</strong></p>
+      <div class="table-wrap">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>विशेषता</th>
+              <th>✡ यहूदी धर्म</th>
+              <th>✝ ईसाई धर्म</th>
+              <th>☪ इस्लाम</th>
+              <th>🕉 हिंदू धर्म</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>ईश्वर</strong></td>
+              <td>एक (यहोवा)</td>
+              <td>एक (त्रिमूर्ति)</td>
+              <td>एक (अल्लाह)</td>
+              <td>अनेक (ब्रह्म)</td>
+            </tr>
+            <tr>
+              <td><strong>स्थापक</strong></td>
+              <td>अब्राहम/मूसा</td>
+              <td>यीशु मसीह</td>
+              <td>पैगंबर मुहम्मद</td>
+              <td>अनादि/ऋषि</td>
+            </tr>
+            <tr>
+              <td><strong>ग्रंथ</strong></td>
+              <td>तनाख</td>
+              <td>बाइबिल</td>
+              <td>कुरान</td>
+              <td>वेद/गीता</td>
+            </tr>
+            <tr>
+              <td><strong>जीवन</strong></td>
+              <td>एक</td>
+              <td>एक</td>
+              <td>एक</td>
+              <td>पुनर्जन्म/कर्म</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── 8. ANTAR ──────────────────────── -->
+  <div class="section" id="antar">
+    <div class="section-header neutral-header">
+      <span class="section-icon">🔄</span>
+      <h2>हिन्दू धर्म अथवा अब्राहमिक धर्मों में अंतर</h2>
+    </div>
+    <div class="section-body">
+      <p>Abrahamic Religions का बढ़ता प्रभाव — हिन्दुओं की प्रतिशत हिस्सा धीमे-धीमे घट रही है। मुस्लिम आबादी की हिस्सेदारी धीरे-धीरे बढ़ी है। ईसाई आबादी स्थिर है पर थोड़ी बढ़ी है।</p>
+
+      <p><strong>क्यों Abrahamic Religions का असर बढ़ रहा है?</strong></p>
+
+      <div class="subsection">
+        <h3>1. जनसंख्या वृद्धि (Fertility Differences)</h3>
+        <p>मुस्लिम परिवारों में औसत बच्चों की संख्या थोड़ी अधिक रही है, जिससे उनकी आबादी का बढ़ना अपेक्षाकृत तेज़ है।</p>
+      </div>
+
+      <div class="subsection">
+        <h3>2. धर्मांतरण का प्रभाव</h3>
+        <p>धर्मांतरण आज भारत में एक बहुत बड़ा और संवेदनशील कारण है जिसके कारण भारत देश का मूल धर्म की संख्या कम होती जा रही है और इन धर्मों की जनसंख्या बढ़ती जा रही है। इसके कुछ कारण हैं जैसे जबरन धर्मांतरण, लव जिहाद, आर्थिक लुभाव — ये कुछ मुख्य कारण हैं जिनके वजह से आज भारत के कई ऐसे क्षेत्रों में मूल धर्म (हिन्दू) की संख्या न के बराबर हो गई है।</p>
+      </div>
+
+      <div class="subsection">
+        <h3>3. स्थान्तरण का प्रभाव</h3>
+        <p>स्थान्तरण — वैसे तो यह शब्द इतना प्रभावी नहीं लगता है, परन्तु जितना यह शब्द उच्चारण में कठिन है उतना ही यह वास्तविकता में कठिन है। अर्थात भारत के ऐसे कई क्षेत्र हैं जो धार्मिक स्थान्तरण के कारण अपने क्षेत्र के मूल धार्मिक, सांस्कृतिक और पारंपरिक भावनाओं को भूलते जा रहे हैं।</p>
+        <p>जैसे कि अगर देखा जाए तो बांग्लादेश भले ही हमारे देश का हिस्सा न हो, लेकिन जैसे हमारे देश में अल्पसंख्यक समुदाय इतने प्रेम और शांति से रहता है, वैसे क्या वहाँ हिन्दू अल्पसंख्यक इतने प्रेम और शांति में रह पाते हैं, इसका उत्तर हमें 'न' में मिलता है। क्योंकि जो जगह कभी भारत का एक ऐसा हिस्सा था जहाँ हिन्दू देवियों की ऐसी विश्व प्रसिद्ध पूजा होती थी, वहाँ आज उन्हें पूजा करने या अपने धार्मिक स्वतंत्रता का कुछ करने पर जिन्दा चौराहे पर जला कर मार दिया जाता है। जिस कारण से ऐसे क्षेत्र जहाँ हिन्दू पहले ही कम होते हैं, वहाँ से भय के कारण और स्थान्तरण करते रहते हैं जिससे जो जगह उनके पूर्वजों ने बसाया था उस स्थान से उन्हें हाथ धोना पड़ा।</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── 9. JATIVAD ────────────────────── -->
+  <div class="section" id="jativad">
+    <div class="section-header neutral-header">
+      <span class="section-icon">👥</span>
+      <h2>जातिवाद (Caste &amp; Communities)</h2>
+    </div>
+    <div class="section-body">
+
+      <!-- Judaism Communities -->
+      <div class="subsection juda-sub">
+        <h3>✡ यहूदी धर्म में समुदाय</h3>
+        <p>यहूदी धर्म (Judaism) में भारत की तरह जाति-प्रथा नहीं होती। लेकिन यहूदी लोग सांस्कृतिक-भाषाई आधार पर कई समुदायों में बँटे होते हैं। इन्हें कभी-कभी लोग "जातियाँ" समझ लेते हैं, लेकिन ये जातियाँ नहीं बल्कि <strong>ethnic communities</strong> हैं।</p>
+
+        <div class="community-grid">
+          <div class="community-card cc-judaism">
+            <h4>1. Ashkenazi Jews (अश्केनाज़ी यहूदी)</h4>
+            <p>यूरोप (जर्मनी, पोलैंड, रूस आदि) से जुड़े यहूदी — आज सबसे बड़ा समूह। इनकी भाषा पहले Yiddish थी।</p>
+          </div>
+          <div class="community-card cc-judaism">
+            <h4>2. Sephardic Jews (सेफ़ार्डी यहूदी)</h4>
+            <p>स्पेन और पुर्तगाल मूल के, बाद में उत्तर अफ्रीका और तुर्की में बसे। इनकी भाषा Ladino थी।</p>
+          </div>
+          <div class="community-card cc-judaism">
+            <h4>3. Mizrahi Jews (मिज़राही यहूदी)</h4>
+            <p>मध्य पूर्व के यहूदी (इराक, ईरान, यमन, सीरिया)। परंपराएँ अरब देशों से प्रभावित।</p>
+          </div>
+          <div class="community-card cc-judaism">
+            <h4>4. Ethiopian Jews (बीटा इज़राइल)</h4>
+            <p>इथियोपिया के प्राचीन यहूदी — अपनी अलग धार्मिक परंपराएँ।</p>
+          </div>
+          <div class="community-card cc-judaism">
+            <h4>5. Cochin Jews (कोचीन यहूदी — भारत)</h4>
+            <p>केरल, भारत में बसे प्राचीन यहूदी — दुनिया के सबसे पुराने यहूदी समुदायों में से एक।</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Islam Communities -->
+      <div class="subsection islam-sub">
+        <h3>☪ इस्लाम में जातीय वर्गीकरण</h3>
+        <p>इस्लाम में मुख्य रूप से तीन श्रेणियों में विभाजित है:</p>
+
+        <div class="community-grid">
+          <div class="community-card cc-islam">
+            <h4>1. अशराफ (Ashraf)</h4>
+            <p>इन लोगों को ऊँचे खानदान वाला माना जाता है, जिनका दावा होता है कि उनकी नस्ल अरब, तुर्क या फ़ारसी पृष्ठभूमि से है।<br/>
+            <strong>Sayyid (सैयद), Sheikh (शेख), Pathan / Pashtun (पठान), Mughal (मुग़ल)</strong></p>
+          </div>
+          <div class="community-card cc-islam">
+            <h4>2. अजलफ़ (Ajlaf)</h4>
+            <p>ये वो लोग हैं जिनकी पहचान काम-धंधे के आधार पर बनी।<br/>
+            <strong>Ansari (अंसारी)</strong> — बुनकर, <strong>Qureshi (क़ुरैशी)</strong> — कसाई, <strong>Saifi (सैफ़ी)</strong> — बढ़ई, <strong>Mansoori (मंसूरी), Farrashi (फ़र्राशी)</strong></p>
+          </div>
+          <div class="community-card cc-islam">
+            <h4>3. अर्ज़ल (Arzal)</h4>
+            <p>कुछ जगह इनको सबसे निचला सामाजिक वर्ग माना गया।<br/>
+            <strong>Halalkhor (हलालखोर), Bhangi / Lalbegi (भंगी / लालबेगी)</strong></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Christianity Communities -->
+      <div class="subsection christ-sub">
+        <h3>✝ ईसाइयों की प्रमुख जाति / समुदाय</h3>
+        <div class="community-grid">
+          <div class="community-card cc-christ">
+            <h4>1. सिरियन क्रिश्चियन (Syrian Christians / Nasrani) — केरल</h4>
+            <p>सबसे पुरानी ईसाई समुदाय — सामाजिक रूप से उच्च मानी जाती है।<br/>
+            मुख्यतः: <strong>कननाया (Knanaya)</strong>, दक्षिणी तिरुवितमकोर सीरियन क्रिश्चियन।</p>
+          </div>
+          <div class="community-card cc-christ">
+            <h4>2. दलित ईसाई (Dalit Christians / Harijan Christians)</h4>
+            <p>जो दलित पृष्ठभूमि से ईसाई बने — आज भी कई जगह सामाजिक भेदभाव झेलते हैं।<br/>
+            पृष्ठभूमि जातियाँ: <strong>चमार, वाल्मीकि, मदिगा, अरुंधतियार</strong> आदि।</p>
+          </div>
+          <div class="community-card cc-christ">
+            <h4>3. आदिवासी ईसाई (Tribal Christians)</h4>
+            <p>उत्तर-पूर्व, छत्तीसगढ़, झारखंड, ओडिशा आदि के आदिवासी समुदाय — जाति नहीं, बल्कि जनजाति।<br/>
+            <strong>नागा, मिज़ो, खासी, सन्थाल, मुंडा</strong></p>
+          </div>
+          <div class="community-card cc-christ">
+            <h4>4. लैटिन क्रिश्चियन (Latin Catholics) — कोस्टल एरिया</h4>
+            <p>पश्चिमी मिशनरियों के समय बने समुदाय।<br/>
+            मुख्य रूप से: <strong>गोवा, तमिलनाडु, केरल, तटीय कर्नाटक</strong></p>
+          </div>
+          <div class="community-card cc-christ">
+            <h4>5. एंग्लो-इंडियन समुदाय</h4>
+            <p>यूरोपीय + भारतीय वंश — सामाजिक रूप से अलग समूह माना जाता है।</p>
+          </div>
+          <div class="community-card cc-christ">
+            <h4>6. प्रोटेस्टेंट समुदायों के वर्ग</h4>
+            <p>जाति औपचारिक रूप से नहीं होती, लेकिन पृष्ठभूमि के आधार पर समूह बनते हैं।<br/>
+            <strong>मेथोडिस्ट, बैपटिस्ट, लूथरन, पेन्टेकोस्टल</strong></p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</main>
+
+<!-- ─── FOOTER ──────────────────────────── -->
+<footer>
+  <p><strong>सेमेटिक धर्म (Semitic Religions)</strong></p>
+  <p style="margin-top:8px">यहूदी धर्म • ईसाई धर्म • इस्लाम</p>
+  <p style="margin-top:8px; font-size:0.8rem; opacity:0.7">अकादमिक शोध पत्र | Academic Research Paper</p>
+</footer>
+
+<!-- ─── SCROLL TOP BUTTON ────────────── -->
+<button id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="ऊपर जाएं">↑</button>
+
+<!-- ─── JS ─────────────────────────────── -->
+<script>
+  // hamburger
+  function toggleMenu() {
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+
+  // close nav on link click (mobile)
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.addEventListener('click', () => {
+      document.getElementById('navLinks').classList.remove('open');
+    });
+  });
+
+  // scroll-top button
+  const btn = document.getElementById('scrollTop');
+  window.addEventListener('scroll', () => {
+    btn.style.display = window.scrollY > 400 ? 'flex' : 'none';
+  });
+
+  // active nav highlight on scroll
+  const sections = document.querySelectorAll('[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 80) current = s.id;
+    });
+    navLinks.forEach(a => {
+      a.style.background = a.getAttribute('href') === '#' + current ? 'var(--accent)' : '';
+      a.style.color      = a.getAttribute('href') === '#' + current ? '#fff' : '';
+    });
+  });
+</script>
+
+</body>
+</html>
